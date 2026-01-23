@@ -4,13 +4,26 @@ Instructions
 
 Unity Project
 
-    Make a Player Character that can controlled with touch inputs (e.g., touch to set the destination of a NavMeshAgent). [5 points]
-    Create an interesting environment and define a navigation mesh that has multiple area costs. 
+    Make a Player Character that can controlled 
+    with touch inputs (e.g., touch to set the 
+    destination of a NavMeshAgent). [5 points]
+    Create an interesting environment and define
+    a navigation mesh that has multiple area costs. 
     [3 points]
-    Make at least one NPC with a NavMeshAgent component that patrols between fixed points on the NavMesh (you can use the animated Chomper model). [5 points]
-    Define an 'aggro' range for the NPC. If the player is inside this range, the NPC should chase and 'catch' the player on contact. [3 points]
-    If the player is caught by the NPC, the player respawns back to its initial position. [2 points]
-    Define a goal for the player to reach without being 'caught' by the NPC and confirm success with a UI message. [2 points]
+    Make at least one NPC with a NavMeshAgent 
+    component that patrols between fixed points 
+    on the NavMesh (you can use the animated 
+    Chomper model). [5 points]
+    Define an 'aggro' range for the NPC. If 
+    the player is inside this range, the NPC 
+    should chase and 'catch' the player on 
+    contact. [3 points]
+    If the player is caught by the NPC, the 
+    player respawns back to its initial 
+    position. [2 points]
+    Define a goal for the player to reach without
+    being 'caught' by the NPC and confirm success 
+    with a UI message. [2 points]
 
 Assignment Grading and Submission
 Grading
