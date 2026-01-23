@@ -43,4 +43,4 @@ Assignment Due
 
 This assignment is due in Week 3.
 
-GDDV 404 - Game Logic 1 
+GDDV 404 - Game Logic 2 
