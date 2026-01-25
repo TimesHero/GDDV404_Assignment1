@@ -8,7 +8,9 @@ public class NpcPatrol : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float aggroRange = 3f;
     [SerializeField] private TouchToMove playerController;
+    [SerializeField] private float catchCooldownSeconds = 1.0f;
 
+    private Coroutine catchRoutine;
     private bool playerCaught;
     private bool isChasing;
 
@@ -139,6 +141,26 @@ public class NpcPatrol : MonoBehaviour
         {
             playerController.Respawn();
         }
+
+        if (catchRoutine != null)
+        {
+            StopCoroutine(catchRoutine);
+        }
+
+        catchRoutine = StartCoroutine(ResetAfterCatch());
+    }
+
+    private IEnumerator ResetAfterCatch()
+    {
+        isChasing = false;
+
+        agent.ResetPath();
+        agent.SetDestination(patrolPoints[currentPatrolTarget].position);
+
+        yield return new WaitForSeconds(catchCooldownSeconds);
+
+        hasCaughtPlayer = false;
+        catchRoutine = null;
     }
 
 }
