@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class NpcPatrol : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class NpcPatrol : MonoBehaviour
     [SerializeField] private float aggroRange = 3f;
     [SerializeField] private TouchToMove playerController;
     [SerializeField] private float catchCooldownSeconds = 1.0f;
+    [SerializeField] private bool hasCaughtPlayer = false;
 
     private Coroutine catchRoutine;
     private bool playerCaught;
@@ -114,53 +117,19 @@ public class NpcPatrol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!isChasing)
-        {
-            return;
-        }
-
         if(!other.CompareTag("Player"))
         {
             return;
         }
 
-        if (playerCaught)
+        if (hasCaughtPlayer)
         {
             return;
         }
-        playerCaught = true;
-
-        HandlePlayerCaught();
+        Debug.Log("NPC has caught the player.");
+        hasCaughtPlayer = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void HandlePlayerCaught()
-    {
-        Debug.Log("Player caught by NPC.");
-
-        if (playerController != null)
-        {
-            playerController.Respawn();
-        }
-
-        if (catchRoutine != null)
-        {
-            StopCoroutine(catchRoutine);
-        }
-
-        catchRoutine = StartCoroutine(ResetAfterCatch());
-    }
-
-    private IEnumerator ResetAfterCatch()
-    {
-        isChasing = false;
-
-        agent.ResetPath();
-        agent.SetDestination(patrolPoints[currentPatrolTarget].position);
-
-        yield return new WaitForSeconds(catchCooldownSeconds);
-
-        hasCaughtPlayer = false;
-        catchRoutine = null;
-    }
 
 }
