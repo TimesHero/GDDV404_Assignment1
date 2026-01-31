@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class NpcPatrol : MonoBehaviour
@@ -10,8 +9,8 @@ public class NpcPatrol : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float aggroRange = 3f;
     [SerializeField] private TouchToMove playerController;
-    [SerializeField] private float catchCooldownSeconds = 1.0f;
     [SerializeField] private bool hasCaughtPlayer = false;
+    public bool HasCaughtPlayer => hasCaughtPlayer;
 
     private Coroutine catchRoutine;
     private bool playerCaught;
@@ -128,6 +127,7 @@ public class NpcPatrol : MonoBehaviour
         }
         Debug.Log("NPC has caught the player.");
         hasCaughtPlayer = true;
+        Collectables.RemainingCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
