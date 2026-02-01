@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: GDDV404_Week2_NavMesh
+  companyName: AJ Fraser
+  productName: GDDV404_Fraser-AJ-A1
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -272,8 +272,8 @@ PlayerSettings:
   AndroidAllowedArchitectures: -13
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /home/aj/Unity/user.keystore
-  AndroidKeyaliasName: navmeshtest
+  AndroidKeystoreName: T:/UnityBuilds/androidBuilds.keystore
+  AndroidKeyaliasName: androidbuilds
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -297,7 +297,14 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 3e4a85fddc03f4840ae21c7419b58a93, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:
@@ -850,8 +857,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: GDDV404_Week2_NavMesh
-  metroPackageVersion: 
+  metroPackageName: GDDV404Week2NavMesh
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -859,7 +866,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: GDDV404_Week2_NavMesh
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: GDDV404_Week2_NavMesh
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
